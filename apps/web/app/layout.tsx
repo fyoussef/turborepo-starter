@@ -1,15 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-});
+import "@repo/config-tailwind/globals.css";
+import { Button } from "@repo/ui/button";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,8 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="w-full min-h-dvh bg-blue-500 text-white">
         {children}
+        <Button>OPA</Button>
       </body>
     </html>
   );
